@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ResQNet Professional Dark Theme Design System */
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 224 71% 6%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 224 71% 6%;
+    --popover-foreground: 213 31% 91%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 224 71% 4%;
+
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 215 25% 16%;
+    --muted-foreground: 217 10% 64%;
+
+    --accent: 215 25% 27%;
+    --accent-foreground: 213 31% 91%;
+
+    --destructive: 0 91% 71%;
+    --destructive-foreground: 224 71% 4%;
+
+    --border: 215 25% 16%;
+    --input: 215 25% 16%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.75rem;
+
+    /* Emergency status colors */
+    --emergency-critical: 0 91% 71%;
+    --emergency-high: 25 95% 53%;
+    --emergency-medium: 48 96% 53%;
+    --emergency-low: 142 69% 58%;
+    
+    /* Operational status colors */
+    --status-operational: 142 69% 58%;
+    --status-warning: 48 96% 53%;
+    --status-error: 0 91% 71%;
+    --status-offline: 215 14% 34%;
+
+    /* Dashboard specific colors */
+    --drone-active: 210 100% 56%;
+    --drone-idle: 217 10% 64%;
+    --drone-charging: 48 96% 53%;
+    --drone-malfunction: 0 91% 71%;
+
+    /* Sidebar theme */
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 224 71% 4%;
+    --sidebar-accent: 215 25% 16%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 215 25% 16%;
+    --sidebar-ring: 210 100% 56%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 48%));
+    --gradient-emergency: linear-gradient(135deg, hsl(0 91% 71%), hsl(0 91% 61%));
+    --gradient-success: linear-gradient(135deg, hsl(142 69% 58%), hsl(142 69% 48%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(224 71% 4% / 0.1), 0 2px 4px -1px hsl(224 71% 4% / 0.06);
+    --shadow-elevated: 0 10px 15px -3px hsl(224 71% 4% / 0.1), 0 4px 6px -2px hsl(224 71% 4% / 0.05);
+    --glow-primary: 0 0 20px hsl(210 100% 56% / 0.3);
+    --glow-emergency: 0 0 20px hsl(0 91% 71% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/40 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/60;
+  }
+}
+
+@layer utilities {
+  .status-critical {
+    @apply bg-emergency-critical/10 text-emergency-critical border-emergency-critical/20;
+  }
+  
+  .status-high {
+    @apply bg-emergency-high/10 text-emergency-high border-emergency-high/20;
+  }
+  
+  .status-medium {
+    @apply bg-emergency-medium/10 text-emergency-medium border-emergency-medium/20;
+  }
+  
+  .status-low {
+    @apply bg-emergency-low/10 text-emergency-low border-emergency-low/20;
+  }
+
+  .drone-flying {
+    @apply bg-drone-active/10 text-drone-active border-drone-active/20;
+  }
+  
+  .drone-idle {
+    @apply bg-drone-idle/10 text-drone-idle border-drone-idle/20;
+  }
+  
+  .drone-charging {
+    @apply bg-drone-charging/10 text-drone-charging border-drone-charging/20;
+  }
+  
+  .drone-malfunction {
+    @apply bg-drone-malfunction/10 text-drone-malfunction border-drone-malfunction/20;
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-emergency {
+    background: var(--gradient-emergency);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+}
